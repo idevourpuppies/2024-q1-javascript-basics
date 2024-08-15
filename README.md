@@ -1,3 +1,4 @@
-# Puppydevouerer5000
+# Puppydevourer5000
+the newest technology in Puppy Eating 
 
-Make sure you give it a good description here
+only $50,000
