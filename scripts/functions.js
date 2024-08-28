@@ -2,14 +2,14 @@
 
 // let firstName = "mica"
 
-let sayHi = function (firstName, age) {
+let sayHi = function (firstName = "Captain No Name", age = 100000) {
 let firstName = f;
 let age = a;
 let greeting = 'hello my name is $(firstname) and i and $(age) years old.';
 // "Hello! my name is" + firstname + "and i am" + age + "years old.";
 console.log(greeting);
 };
-
+sayHi()
 sayH1 ("Nicholas", 14);
 sayHi (firstName, 19);
 
