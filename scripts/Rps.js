@@ -1,25 +1,27 @@
 //@ts-check
 
 let playerControls = document.getElementById("player-controls");
-let btnRock = document.getElementById("player-controls");
-let btnPaper = document.getElementById("player-controls");
-let btnScissors = document.getElementById("player-controls");
 
-function rockClicked() {
-    console.log("rock was chosen")
-}
+    let weapons = [
+        {
+            type: "Rock",
+            beats: "Scissors"
+        },
+        {
+            type: "Paper",
+            beats: "Rock"
+        },
+        {
+            type: "Scissors",
+            beats: "Paper"
+        }
+    ];
 
-function paperClicked() {
-    console.log("Paper was chosen")
-}
+    function pickRandomWeapon(weapons) {
+        let Randy = Math.floor(Math.random() * weapons.length);
+        return weapons[Randy];
+    }
 
-function ScissorsClicked() {
-    console.log("Scissors were chosen")
-}
-
-//btnRock?.addEventListener("click", rockClicked)
-//btnPaper?.addEventListener("click", PaperClicked)
-//btnScissors?.addEventListener("click", ScissorsClicked)
 
 function playerControlHandler(e) {
     let weaponName = e.target.innerText;
