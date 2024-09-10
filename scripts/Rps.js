@@ -2,6 +2,13 @@
 
 let playerControls = document.getElementById("player-controls");
 
+//game results
+/**@type {HTMLElement} */
+//@ts-ignore
+let gameResultsHeader = document.getElementById("game-results");
+
+    gameResultsHeader.innerText = "Hey there";
+
 let isGameOver =false;
     let weapons = [
         {
@@ -39,24 +46,24 @@ let isGameOver =false;
     }
 
 function playerControlHandler(e) {
-    if (isGameOver) {
-        return
-    }
+    // if (isGameOver) {
+    //     return
+    // }
 
     let weaponName = e.target.innerText;
+    let playerWeapon = weapons.find((w) => w.type === weaponName);
 
-    let playerWeapon = weapons.find(w => w.type === weaponName)
-
-    if(playerWeapon){
-        console.log("ERROR! Player weapon undefined",weaponName)
+    if(!playerWeapon){
+        console.log("ERROR! Player weapon undefined");
         return;
     }
 
-    let computerWeapon = pickRandomWeapon
+    let computerWeapon = pickRandomWeapon(weapons);
 
-    let result = determineOutcome(playerWeapon, computerWeapon)
+    let result = determineOutcome(playerWeapon, computerWeapon);
 
-    console.log(weaponName, "was chosen")
+    gameResultsHeader.innerText = result;
+    console.log(result);
 }
 
 playerControls?.addEventListener("click", playerControlHandler);
