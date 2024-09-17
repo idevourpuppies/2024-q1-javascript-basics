@@ -20,3 +20,6 @@ red.color = "red";
 
 let blue = new Ball("blue ball")
 blue.color
+
+red.play();
+blue.play();
