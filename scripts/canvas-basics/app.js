@@ -20,14 +20,27 @@ ctx.fill();
 let lastTime = 0;
 let hue = 0;
 
+let x1 = 0;
+let y1 = 0;
+let speedx = 1;
+let speedy = 0.5;
+
 function drawLoop(timestamp) {
+	//ctx.clearRect(0, 0, canvas.width, canvas.height);
 	let elapsedTime = timestamp - lastTime;
 	lastTime = timestamp;
 
 	ctx.fillStyle = `hsla(${hue}, 100%, 50%, 100%)`;
-	ctx.fillRect(250, 250, 50, 50);
-	hue = hue + 1;
-	console.log(elapsedTime);
+	ctx.fillRect(x1, y1, 100, 100);
+
+	//hue = hue += 1;
+	//hue += 1000000000;
+	hue++;
+
+	x1 += speedx;
+	y1 += speedy;
+
+	//console.log(elapsedTime);
 
 	window.requestAnimationFrame(drawLoop);
 }
